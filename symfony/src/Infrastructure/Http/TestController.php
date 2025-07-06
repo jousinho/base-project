@@ -1,9 +1,10 @@
 <?php
     // src/Infrastructure/Http/TestController.php
-    namespace App\Controller;
+    namespace App\Infrastructure\Http;
 
     use App\Domain\Model\Pedido;
     use Symfony\Component\HttpFoundation\Response;
+    use Symfony\Component\Routing\Annotation\Route;
 
     class TestController
     {
