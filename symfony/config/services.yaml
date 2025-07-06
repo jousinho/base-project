@@ -22,3 +22,11 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    # Registra automáticamente todo en Infrastructure
+    App\Infrastructure\:
+        resource: '../src/Infrastructure/*'
+        exclude: '../src/Infrastructure/{Entity}'
+
+    # Bind de interfaces de dominio a implementaciones
+    #App\Domain\Repository\ExampleRepositoryInterface: '@App\Infrastructure\Persistence\ExampleRepositoryImpl'    
