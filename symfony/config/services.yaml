@@ -28,7 +28,7 @@ services:
         resource: '../src/Infrastructure/*'
         exclude: '../src/Infrastructure/{Entity}'
 
-            # Activar autowiring explícito para controladores
+    # Activar autowiring explícito para controladores
     App\Infrastructure\Http\:
         resource: '../src/Infrastructure/Http/'
         tags: ['controller.service_arguments']  # ¡Esta línea es mágica!
