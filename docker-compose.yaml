@@ -42,6 +42,38 @@ services:
     entrypoint: ['/bin/sh', '-c']
     command: ['tail -f /dev/null'] # Comando que mantiene el contenedor corriendo
 
+  db:
+    image: mysql:8.0  # o mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword  # Cambia esto
+      MYSQL_DATABASE: app_db
+      MYSQL_USER: app_user
+      MYSQL_PASSWORD: app_password       # Cambia esto
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  db_test:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db_test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./var/test_db:/var/lib/mysql
+
 networks:
   symfony-network:
     driver: bridge
+
+volumes:
+  mysql_data:    
