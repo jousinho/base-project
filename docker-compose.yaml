@@ -22,6 +22,8 @@ services:
       - ./symfony:/var/www/project
     environment:
       - APP_ENV=dev
+    depends_on:
+      - db
     networks:
       - symfony-network
 
@@ -58,6 +60,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    networks:
+      - symfony-network
 
   db_test:
     image: mysql:8.0

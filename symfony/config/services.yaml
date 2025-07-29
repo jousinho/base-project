@@ -41,5 +41,5 @@ services:
     # Bind de interfaces de dominio a implementaciones
     #App\Domain\Repository\ExampleRepositoryInterface: '@App\Infrastructure\Persistence\ExampleRepositoryImpl'    
     App\Application\UseCase\EjemploUseCaseInterface: '@App\Application\UseCase\EjemploUseCase'
-
+    App\Domain\Repository\ProductRepositoryInterface: '@App\Infrastructure\Persistence\DoctrineProductRepository'
     

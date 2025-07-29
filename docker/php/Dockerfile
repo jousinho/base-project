@@ -6,13 +6,14 @@ ARG GROUP_ID
 RUN apk add --no-cache \
     icu-dev \
     libzip-dev \
-    postgresql-dev \
+    libpq-dev \
     git \
     curl \
     unzip \
     && docker-php-ext-install \
     intl \
-    pdo_pgsql \
+    pdo \
+    pdo_mysql \
     zip \
     opcache
 
