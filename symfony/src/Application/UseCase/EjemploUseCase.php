@@ -6,20 +6,25 @@ use App\Domain\Repository\ExampleRepositoryInterface;
 class EjemploUseCase
 {
     public function __construct(
-        private ExampleRepositoryInterface $repository
+        // private ExampleRepositoryInterface $repository
     ) {}
 
-    public function execute(array $input): array
+    /**
+     * @throws \InvalidArgumentException
+     */
+    public function execute(string $input): string
     {
         // 1. Lógica de aplicación (validación, orchestación)
-        if (empty($input['key'])) {
-            throw new \InvalidArgumentException("Input inválido");
+        if (empty($input)) {
+            throw new \InvalidArgumentException('input invalido');
         }
 
         // 2. Llama al dominio (a través del repositorio/interfaces)
-        $this->repository->save($input);
+        // $this->repository->save($input);
 
         // 3. Retorna resultado (podría ser un DTO)
-        return ['status' => 'success', 'data' => $input];
+        // $input = 'hola';
+        return $input;
+        //return ['status' => 'success', 'data' => $input];
     }
 }

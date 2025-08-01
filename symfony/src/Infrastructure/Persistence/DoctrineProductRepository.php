@@ -22,4 +22,9 @@ class DoctrineProductRepository implements ProductRepositoryInterface
     {
         return $this->entityManager->find(Product::class, $id);
     }
-}
+
+    public function findById(int $id): ?Product
+    {
+        return $this->entityManager->getRepository(Product::class)->find($id);
+    }
+}   

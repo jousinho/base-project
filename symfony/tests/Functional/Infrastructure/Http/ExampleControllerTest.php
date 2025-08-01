@@ -1,12 +1,12 @@
 <?php
-namespace App\Tests\Infrastructure\Http;
+namespace App\Tests\Functional\Infrastructure\Http;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ExampleControllerTest extends WebTestCase
 {
-    public function testCreateProduct()
-    {
+    public function test_example()
+    {   
         $client = static::createClient();
         $client->request(
             'GET',

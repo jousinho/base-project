@@ -74,6 +74,8 @@ services:
       - "3307:3306"
     volumes:
       - ./var/test_db:/var/lib/mysql
+    networks:
+      - symfony-network  
 
 networks:
   symfony-network:

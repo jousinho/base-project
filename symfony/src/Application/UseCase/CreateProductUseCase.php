@@ -15,6 +15,7 @@ class CreateProductUseCase
     {
         $product = new Product($productName);
         $this->repository->save($product);
+        
         return $product;
     }
 }
