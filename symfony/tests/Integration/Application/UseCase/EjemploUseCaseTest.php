@@ -3,6 +3,7 @@ namespace App\Tests\Integration\Application\UseCase;
 
 use App\Application\UseCase\EjemploUseCase;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use App\Domain\Repository\ExampleRepositoryInterface;
 
 final class EjemploUseCaseTest extends KernelTestCase
 {
@@ -16,5 +17,10 @@ final class EjemploUseCaseTest extends KernelTestCase
         $result = $ejemploUseCase->execute('input');
 
         $this->assertEquals('input', $result);
+
+        $exampleRepository = $container->get(ExampleRepositoryInterface::class);
+        $all = $exampleRepository->all();
+
+        var_dump($all);
     }
 }

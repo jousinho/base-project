@@ -1,12 +1,13 @@
 <?php
 namespace App\Application\UseCase;
 
+use App\Domain\Model\Product;
 use App\Domain\Repository\ExampleRepositoryInterface;
 
 class EjemploUseCase
 {
     public function __construct(
-        // private ExampleRepositoryInterface $repository
+        private ExampleRepositoryInterface $repository
     ) {}
 
     /**
@@ -19,8 +20,10 @@ class EjemploUseCase
             throw new \InvalidArgumentException('input invalido');
         }
 
+        $product = new Product($input);
+
         // 2. Llama al dominio (a través del repositorio/interfaces)
-        // $this->repository->save($input);
+        $this->repository->save($product);
 
         // 3. Retorna resultado (podría ser un DTO)
         // $input = 'hola';
