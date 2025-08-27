@@ -22,6 +22,10 @@ class ExampleController extends AbstractController
 
         $product = new Product('minombre');
         $this->repository->save($product);
-        return new Response("OK");
+
+        return $this->render('@views/example/example.html.twig', [
+            'products' => 'products'
+        ]);
+        //return new Response("OK");
     }
 }
