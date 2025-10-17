@@ -1,5 +1,5 @@
 <?php
-namespace App\Infrastructure\Http;
+namespace App\Infrastructure\Http\Controllers;
 
 use App\Application\UseCase\EjemploUseCase;
 use Symfony\Component\HttpFoundation\JsonResponse;

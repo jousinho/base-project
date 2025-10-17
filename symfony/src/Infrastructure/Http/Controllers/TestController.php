@@ -1,6 +1,6 @@
 <?php
     // src/Infrastructure/Http/TestController.php
-    namespace App\Infrastructure\Http;
+    namespace App\Infrastructure\Http\Controllers;
 
     use App\Domain\Model\Pedido;
     use Symfony\Component\HttpFoundation\Response;

@@ -1,7 +1,7 @@
 <?php
 
 // src/Infrastructure/Http/ExampleController.php
-namespace App\Infrastructure\Http;
+namespace App\Infrastructure\Http\Controllers;
 
 use App\Domain\Model\Product;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

@@ -1,6 +1,6 @@
 <?php
 // src/Infrastructure/Http/ProductController.php
-namespace App\Infrastructure\Http;
+namespace App\Infrastructure\Http\Controllers;
 
 use App\Application\UseCase\CreateProductUseCase;
 use Symfony\Component\HttpFoundation\JsonResponse;
